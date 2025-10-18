@@ -305,7 +305,8 @@ img {
   left: 0;
 }
 .home__profession-2{
-  transform: translateY(-1rem);
+  transform: none;
+  margin-top: 0.5rem; 
 }
 .home__social{
   z-index: 2;
