@@ -62,10 +62,32 @@ tabs.forEach((tab) =>{
 })
 
 /*=============== SERVICES ACCORDION ===============*/
+const servicesButtons = document.querySelectorAll('.services__button');
 
+servicesButtons.forEach((button) => {
+  const heightInfo = document.querySelector('.services__info')
+  heightInfo.style.height = heightInfo.scrollHeight + 'px';
 
-/*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
+  button.addEventListener('click', () => {
+    const servicesCards = document.querySelectorAll('.services__card');
+    currentCard = button.parentNode;
+    currentInfo = currentCard.querySelector('.services__info');
+    isCardOpen = currentCard.classList.contains('services-open');
 
+    servicesCards.forEach(card => {
+
+      card.classList.replace('services-open', 'services-close');
+
+      const info = card.querySelector('.services__info');
+      info.style.height = '0';
+    })
+
+    if(!isCardOpen) {
+      currentCard.classList.replace('services-close', 'services-open');
+      currentInfo.style.height = currentInfo.scrollHeight + 'px';
+    }
+  })
+})
 
 /*=============== COPY EMAIL IN CONTACT ===============*/
 
