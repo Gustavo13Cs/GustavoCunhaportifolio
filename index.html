@@ -4,15 +4,11 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
       <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
       <link rel="stylesheet" href="assets/css/styles.css">
-
-      <title>Responsive portfolio website Anid - Bedimcode</title>
    </head>
    <body>
       <header class="header" id="header">
@@ -581,14 +577,74 @@ Experiência na construção de aplicações dinâmicas e bem estruturadas com R
             </div>
          </section>
 
-
          <section class="contact section" id="contact">
-            
+            <h2 class="section__title">
+               Vamos <span>Conversar</span> <br>
+               Contato
+            </h2>
+
+            <div class="contact__container container grid">
+               <form action="https://formspree.io/f/xjkprzyl" method="POST" class="contact__form">
+                     <div class="contact__group">
+                        <input type="text" name="name" class="contact__input" placeholder="Seu Nome"required>
+                        <input type="email" name="email" class="contact__input" placeholder="Seu Email" required>
+                     </div>
+                     
+                     <textarea name="message" class="contact__input contact__textarea" placeholder="Sua Mensagem" required></textarea>
+                     
+                     <p class="contact__message"></p>
+
+                     <button type="submit" class="button">
+                        Enviar Mensagem <i class="ri-send-plane-line"></i> 
+                     </button>
+               </form>
+            </div>
          </section>
       </main>
 
-      <footer class="footer grid">
-         
+      <footer class="footer">
+         <div class="footer__container container grid">
+            <div class="footer__group">
+               <h3 class="footer__title">Social Media</h3>
+               <ul class="footer__list">
+                  <li>
+                     <a href="https://www.linkedin.com/in/gustavo-cunha-s/" target="_blank" class="footer__link">
+                        LinkedIn <i class="ri-arrow-right-up-line"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="https://github.com/Gustavo13Cs/Gustavo13Cs" target="_blank" class="footer__link">
+                        GitHub <i class="ri-arrow-right-up-line"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="https://medium.com/@gustavocunha0401" target="_blank" class="footer__link">
+                        Medium <i class="ri-arrow-right-up-line"></i>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+
+            <div class="footer__group">
+               <h3 class="footer__title">Contatos</h3>
+               <ul class="footer__list">
+                  <li>
+                     <a href="https://wa.link/zcfo55" target="_blank" class="footer__link">
+                        WhatsApp <i class="ri-arrow-right-up-line"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="https://www.instagram.com/gustavocs__/" target="_blank" class="footer__link">
+                        Instagram <i class="ri-arrow-right-up-line"></i>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="footer__copyright container">
+            <p>&copy; 2025 Gustavo Cunha</p>
+         </div>
       </footer>
       
       <script src="assets/js/scrollreveal.min.js"></script>

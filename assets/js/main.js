@@ -90,6 +90,51 @@ servicesButtons.forEach((button) => {
 })
 
 /*=============== COPY EMAIL IN CONTACT ===============*/
+const contactForm = document.querySelector('.contact__form');
+const contactMessage = document.querySelector('.contact__message');
+
+const handleSubmit = async (event) => {
+    event.preventDefault(); 
+    
+    const form = event.target;
+    const data = new FormData(form);
+    
+    contactMessage.textContent = 'Enviando...';
+    contactMessage.style.color = 'var(--text-color-light)';
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            contactMessage.textContent = 'Mensagem enviada! Obrigado pelo contato.';
+            contactMessage.style.color = 'var(--first-color)'; 
+            form.reset();
+        } else {
+            const responseData = await response.json();
+            if (responseData.errors) {
+                contactMessage.textContent = responseData.errors.map(err => err.message).join(', ');
+            } else {
+                contactMessage.textContent = 'Ocorreu um erro ao enviar. Tente novamente.';
+            }
+            contactMessage.style.color = 'red'; 
+        }
+    } catch (error) {
+        contactMessage.textContent = 'Ocorreu um erro de rede. Verifique sua conexão.';
+        contactMessage.style.color = 'red'; 
+    }
+
+    setTimeout(() => {
+        contactMessage.textContent = '';
+    }, 5000);
+};
+
+contactForm.addEventListener('submit', handleSubmit);
 
 
 /*=============== CURRENT YEAR OF THE FOOTER ===============*/ 
