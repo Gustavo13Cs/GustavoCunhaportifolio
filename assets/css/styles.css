@@ -698,7 +698,7 @@ img {
   padding: 2rem 1.5rem;
   border-radius: 3rem;
   display: grid;
-  row-gap: 1.5rem;
+  row-gap: 1,5rem;
   overflow: hidden;
 }
 
@@ -1212,7 +1212,7 @@ img {
 
   .services__container{
     grid-template-columns: repeat(3,395px);
-    column-gap: 2rem;
+    column-gap: 1rem;
   }
 
   .services__card{
